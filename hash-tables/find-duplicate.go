@@ -1,6 +1,6 @@
 package hash_tables
 
-func findDuplicate(nums []int) int {
+func FindDuplicate(nums []int) int {
 
 	mapNums := map[int]bool{}
 

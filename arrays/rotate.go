@@ -1,7 +1,7 @@
 package arrays
 
 // https://leetcode.com/problems/rotate-array/
-func rotate(nums []int, k int) {
+func Rotate(nums []int, k int) {
 
 	lenNums := len(nums)
 
@@ -24,7 +24,7 @@ func rotate(nums []int, k int) {
 	}
 }
 
-func rotate2(nums []int, k int) {
+func Rotate2(nums []int, k int) {
 
 	lenNums := len(nums)
 

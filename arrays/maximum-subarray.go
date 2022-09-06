@@ -2,7 +2,7 @@ package arrays
 
 import "math"
 
-func maxSubArray(nums []int) int {
+func MaxSubArray(nums []int) int {
 
 	sum := 0
 	max := math.MinInt

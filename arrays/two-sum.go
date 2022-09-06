@@ -1,7 +1,7 @@
 package arrays
 
 // https://leetcode.com/problems/two-sum/
-func twoSum(nums []int, target int) []int {
+func TwoSum(nums []int, target int) []int {
 
 	// Store the number to index in a hash table
 	data := map[int]int{}

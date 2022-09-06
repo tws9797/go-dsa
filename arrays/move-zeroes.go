@@ -1,7 +1,7 @@
 package arrays
 
 // https://leetcode.com/problems/move-zeroes/
-func moveZeroes(nums []int) {
+func MoveZeroes(nums []int) {
 
 	for i, count := 0, 0; i < len(nums); i++ {
 

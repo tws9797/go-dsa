@@ -1,7 +1,7 @@
 package arrays
 
 // https://leetcode.com/problems/contains-duplicate/
-func containsDuplicate(nums []int) bool {
+func ContainsDuplicate(nums []int) bool {
 
 	// Create a hash table to store the new number encountered
 	mapNums := map[int]bool{}
