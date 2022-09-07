@@ -1,14 +1,12 @@
 package sorting
 
-import "math"
-
 func SelectionSort(arr []int) {
 
 	minIdx := 0
 
 	for i := 0; i < len(arr); i++ {
 
-		min := math.MaxInt
+		min := arr[i]
 
 		for j := i + 1; j < len(arr); j++ {
 			if arr[j] < min {

@@ -8,12 +8,13 @@ func MergeSort(items []int) []int {
 		return items
 	}
 
-	middle := int(num / 2)
+	middle := num / 2
 	var (
 		left  = make([]int, middle)
 		right = make([]int, num-middle)
 	)
 
+	// Assign values to left and right
 	for i := 0; i < num; i++ {
 		if i < middle {
 			left[i] = items[i]
@@ -26,6 +27,7 @@ func MergeSort(items []int) []int {
 }
 
 func Merge(left, right []int) []int {
+
 	result := make([]int, len(left)+len(right))
 
 	i := 0
@@ -44,6 +46,7 @@ func Merge(left, right []int) []int {
 		result[i] = left[j]
 		i++
 	}
+
 	for j := 0; j < len(right); j++ {
 		result[i] = right[j]
 		i++
