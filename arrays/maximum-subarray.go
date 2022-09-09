@@ -1,27 +1,29 @@
 package arrays
 
-import "math"
-
 func MaxSubArray(nums []int) int {
 
-	sum := 0
-	max := math.MinInt
+	if len(nums) == 0 {
+		return 0
+	}
+
+	currentSubArray := nums[0]
+	maxSubArray := nums[0]
 
 	//If sum of subarray is positive, it has possible to make the next value bigger
 	// so keep do it until it turn to negative
 	//If the sum is negative, it has no use to the next element, so break
-	for _, val := range nums {
+	for _, num := range nums[1:] {
 
-		sum += val
-
-		if sum > max {
-			max = sum
+		if currentSubArray+num > num {
+			currentSubArray += num
+		} else {
+			currentSubArray = num
 		}
 
-		if sum < 0 {
-			sum = 0
+		if maxSubArray < currentSubArray {
+			maxSubArray = currentSubArray
 		}
 	}
 
-	return max
+	return maxSubArray
 }

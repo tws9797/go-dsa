@@ -1,20 +1,33 @@
 package arrays
 
-// https://leetcode.com/problems/two-sum/
 func TwoSum(nums []int, target int) []int {
 
-	// Store the number to index in a hash table
+	// Store the complement and index pair in the hash table
 	data := map[int]int{}
 
 	for idx, num := range nums {
 
-		// Store the num with their respective index in hash table
-		// For each number, check if target - num exists in the hash table
-		// If the hash table[target-num] is found, return the value (which is index) and the current index
-		if foundNum, ok := data[target-num]; ok {
-			return []int{foundNum, idx}
+		// Check if the complement (target - num) exists in the hashmap
+		if foundIdx, ok := data[target-num]; ok {
+
+			// Iterating and inserting elements (complement and index pair) into the hash table
+			return []int{foundIdx, idx}
 		}
+
 		data[num] = idx
+	}
+
+	return nil
+}
+
+func TwoSumBruteForce(nums []int, target int) []int {
+
+	for i := 0; i < len(nums); i++ {
+		for j := i + 1; j < len(nums); j++ {
+			if nums[i]+nums[j] == target {
+				return []int{i, j}
+			}
+		}
 	}
 
 	return []int{}
