@@ -1,6 +1,5 @@
-package arrays
+package leetcode
 
-// https://leetcode.com/problems/contains-duplicate/
 func ContainsDuplicate(nums []int) bool {
 
 	// Create a hash table to store the new number encountered

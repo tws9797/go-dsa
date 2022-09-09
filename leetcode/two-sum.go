@@ -1,4 +1,4 @@
-package arrays
+package leetcode
 
 func TwoSum(nums []int, target int) []int {
 

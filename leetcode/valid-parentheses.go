@@ -1,4 +1,4 @@
-package arrays
+package leetcode
 
 func IsValidStack(s string) bool {
 

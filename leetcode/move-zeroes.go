@@ -1,6 +1,5 @@
-package arrays
+package leetcode
 
-// https://leetcode.com/problems/move-zeroes/
 func MoveZeroes(nums []int) {
 
 	for i, count := 0, 0; i < len(nums); i++ {
