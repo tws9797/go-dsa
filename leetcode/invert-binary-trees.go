@@ -1,11 +1,5 @@
 package leetcode
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
 func InvertTreeRecursive(root *TreeNode) *TreeNode {
 
 	if root == nil {
