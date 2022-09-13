@@ -7,6 +7,7 @@ func FibonacciIterative(n int) int {
 
 	//sum 0
 	//lastSum 0
+	//0112358
 	for i := 0; i < n-1; i++ {
 		temp := secondNum
 		secondNum = firstNum + secondNum
