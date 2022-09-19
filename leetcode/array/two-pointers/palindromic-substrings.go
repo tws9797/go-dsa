@@ -1,4 +1,4 @@
-package leetcode
+package two_pointers
 
 func CountSubstrings(s string) int {
 	count := 0

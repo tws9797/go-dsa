@@ -1,6 +1,8 @@
-package leetcode
+package sliding_window
 
 import "math"
+
+// https://leetcode.com/problems/longest-substring-without-repeating-characters/
 
 func LengthOfLongestSubstring(s string) int {
 
@@ -16,6 +18,7 @@ func LengthOfLongestSubstring(s string) int {
 
 		m[s[r]]++
 
+		// Check if the current character already exists in the hash set
 		for m[s[r]] > 1 {
 			m[s[l]]--
 			l++
@@ -44,6 +47,7 @@ func LengthOfLongestSubstring2(s string) int {
 		if prevIdx, ok := m[r]; ok {
 
 			// To prevent scenario like "abba" where a is being included when reach the last index
+			// To prevent l to move backwards
 			if prevIdx > l {
 				l = prevIdx
 			}

@@ -1,4 +1,4 @@
-package leetcode
+package two_pointers
 
 func SortColors(nums []int) {
 	l := 0

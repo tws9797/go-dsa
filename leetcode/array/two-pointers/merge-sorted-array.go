@@ -1,10 +1,8 @@
-package leetcode
+package two_pointers
 
 func Merge(nums1 []int, m int, nums2 []int, n int) {
 
-	lenMerge := m + n
-
-	for i := lenMerge - 1; i >= 0; i-- {
+	for i := m + n - 1; i >= 0; i-- {
 
 		// If n == 0, leave nums1 as it is
 		if n == 0 {

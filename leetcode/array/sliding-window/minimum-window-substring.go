@@ -1,7 +1,6 @@
-package leetcode
+package sliding_window
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -46,7 +45,7 @@ func MinWindow(s string, t string) string {
 		}
 
 		// Try and contract the window till the point where it ceases to be 'desirable'.
-		for l <= r && formed == required {
+		for formed == required {
 
 			if ans[0] == -1 || r-l+1 < ans[0] {
 				ans[0] = r - l + 1
@@ -73,7 +72,6 @@ func MinWindow(s string, t string) string {
 		return ""
 	}
 
-	fmt.Println(ans)
 	return s[ans[1] : ans[2]+1]
 }
 
@@ -107,7 +105,7 @@ func MinWindow2(s string, t string) string {
 
 	for r < len(s) {
 
-		// If char in s exists in t, decrease counter
+		// If char in s exists in t and the char count is still more than 0, decrease counter
 		if m[s[r]] > 0 {
 			counter--
 		}
@@ -136,7 +134,7 @@ func MinWindow2(s string, t string) string {
 				minLen = r - l
 			}
 
-			// Return the counts as the window become smaller 
+			// Return the counts as the window become smaller
 			m[s[l]]++
 
 			// When char exists in t, increase counter
