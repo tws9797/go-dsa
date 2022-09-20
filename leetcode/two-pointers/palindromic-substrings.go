@@ -3,6 +3,7 @@ package two_pointers
 func CountSubstrings(s string) int {
 	count := 0
 
+	// abc
 	for i := 0; i < len(s); i++ {
 		count += extendPalindrome(s, i, i)
 		count += extendPalindrome(s, i, i+1)
@@ -14,6 +15,7 @@ func CountSubstrings(s string) int {
 func extendPalindrome(s string, l, r int) int {
 
 	res := 0
+
 	for l >= 0 && r < len(s) && s[l] == s[r] {
 		l--
 		r++
