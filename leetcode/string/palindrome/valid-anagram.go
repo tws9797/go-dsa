@@ -12,11 +12,7 @@ func IsAnagram(s string, t string) bool {
 	}
 
 	for _, c := range s {
-		if _, ok := hashTable[c]; !ok {
-			hashTable[c] = 1
-		} else {
-			hashTable[c]++
-		}
+		hashTable[c]++
 	}
 
 	for _, c := range t {
@@ -48,4 +44,26 @@ func IsAnagram2(s string, t string) bool {
 	})
 
 	return string(r1) == string(r2)
+}
+
+func IsAnagram3(s string, t string) bool {
+
+	if len(s) != len(t) {
+		return false
+	}
+
+	counter := [26]int{}
+
+	for _, r := range t {
+		counter[r-'a']++
+	}
+
+	for _, r := range s {
+		counter[r-'a']--
+		if counter[r-'a'] < 0 {
+			return false
+		}
+	}
+
+	return true
 }
