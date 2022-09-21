@@ -2,6 +2,8 @@ package essentials
 
 import "sort"
 
+//https://leetcode.com/problems/valid-palindrome/
+
 func ContainsDuplicate(nums []int) bool {
 
 	// Create a hash table to store the new number encountered

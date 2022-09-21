@@ -5,7 +5,7 @@ import (
 	"unicode"
 )
 
-// https://leetcode.com/problems/valid-palindrome/
+// https://leetcode.com/problems/contains-duplicate/
 
 func IsPalindrome(s string) bool {
 	s = strings.ToUpper(s)
