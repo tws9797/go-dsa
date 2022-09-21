@@ -1,5 +1,7 @@
 package essentials
 
+//https://leetcode.com/problems/two-sum/
+
 func TwoSum(nums []int, target int) []int {
 
 	// Store the complement and index pair in the hash table

@@ -1,4 +1,8 @@
-package leetcode
+package palindrome
+
+import "sort"
+
+//https://leetcode.com/problems/valid-anagram/
 
 func IsAnagram(s string, t string) bool {
 
@@ -28,4 +32,20 @@ func IsAnagram(s string, t string) bool {
 	}
 
 	return true
+}
+
+func IsAnagram2(s string, t string) bool {
+
+	r1 := []byte(s)
+	r2 := []byte(t)
+
+	sort.Slice(r1, func(i, j int) bool {
+		return r1[i] < r1[j]
+	})
+
+	sort.Slice(r2, func(i, j int) bool {
+		return r2[i] < r2[j]
+	})
+
+	return string(r1) == string(r2)
 }
