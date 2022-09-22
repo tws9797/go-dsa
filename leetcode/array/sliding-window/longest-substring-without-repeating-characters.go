@@ -42,9 +42,9 @@ func LengthOfLongestSubstring2(s string) int {
 	m := map[byte]int{}
 	l := 0
 
-	for i, r := range []byte(s) {
+	for r, b := range []byte(s) {
 
-		if prevIdx, ok := m[r]; ok {
+		if prevIdx, ok := m[b]; ok {
 
 			// To prevent scenario like "abba" where a is being included when reach the last index
 			// To prevent l to move backwards
@@ -53,11 +53,11 @@ func LengthOfLongestSubstring2(s string) int {
 			}
 		}
 
-		if i-l+1 > ans {
-			ans = i - l + 1
+		if r-l+1 > ans {
+			ans = r - l + 1
 		}
 
-		m[r] = i + 1
+		m[b] = r + 1
 	}
 
 	return ans

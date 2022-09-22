@@ -2,6 +2,8 @@ package sliding_window
 
 import "math"
 
+// https://leetcode.com/problems/minimum-size-subarray-sum/
+
 func MinSubArrayLen(target int, nums []int) int {
 
 	l, r, sum := 0, 0, 0
