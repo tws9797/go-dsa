@@ -1,5 +1,7 @@
 package two_pointers
 
+// https://leetcode.com/problems/merge-sorted-array/
+
 func Merge(nums1 []int, m int, nums2 []int, n int) {
 
 	for i := m + n - 1; i >= 0; i-- {

@@ -1,6 +1,9 @@
 package two_pointers
 
+// https://leetcode.com/problems/sort-colors/
+
 func SortColors(nums []int) {
+
 	l := 0
 	curr := 0
 	r := len(nums) - 1

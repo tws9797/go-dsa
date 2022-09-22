@@ -1,9 +1,11 @@
 package two_pointers
 
+// https://leetcode.com/problems/palindromic-substrings/
+
 func CountSubstrings(s string) int {
+
 	count := 0
 
-	// abc
 	for i := 0; i < len(s); i++ {
 		count += extendPalindrome(s, i, i)
 		count += extendPalindrome(s, i, i+1)
