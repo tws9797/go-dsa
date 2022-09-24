@@ -1,4 +1,6 @@
-package leetcode
+package precomputation
+
+// https://leetcode.com/problems/product-of-array-except-self/
 
 func ProductExceptSelf(nums []int) []int {
 

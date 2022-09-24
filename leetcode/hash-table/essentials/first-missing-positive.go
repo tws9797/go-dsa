@@ -1,5 +1,7 @@
 package essentials
 
+// https://leetcode.com/problems/first-missing-positive/
+
 func FirstMissingPositive(nums []int) int {
 
 	curr := 0

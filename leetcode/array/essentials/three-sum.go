@@ -1,4 +1,4 @@
-package leetcode
+package essentials
 
 import (
 	"sort"
