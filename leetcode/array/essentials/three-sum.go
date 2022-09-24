@@ -4,6 +4,8 @@ import (
 	"sort"
 )
 
+// https://leetcode.com/problems/3sum/
+
 func ThreeSum(nums []int) [][]int {
 
 	var ans [][]int
@@ -101,10 +103,13 @@ func ThreeSumNoSort(nums []int) [][]int {
 			for j := i + 1; j < len(nums); j++ {
 				complement := -nums[i] - nums[j]
 				if c, ok := seen[complement]; ok && c == i {
+
 					triplet := []int{nums[i], nums[j], complement}
 					sort.Ints(triplet)
+
 					var tripletKey [3]int
 					copy(tripletKey[:], triplet)
+
 					res[tripletKey] = true
 				}
 				seen[nums[j]] = i
