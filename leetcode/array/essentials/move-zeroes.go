@@ -1,4 +1,6 @@
-package leetcode
+package essentials
+
+// https://leetcode.com/problems/move-zeroes/
 
 func MoveZeroes(nums []int) {
 

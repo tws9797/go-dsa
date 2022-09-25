@@ -6,6 +6,8 @@ import (
 	"strings"
 )
 
+// https://leetcode.com/problems/group-anagrams/
+
 func GroupAnagrams(strs []string) [][]string {
 
 	if len(strs) == 0 {
@@ -41,7 +43,7 @@ func GroupAnagrams2(strs []string) [][]string {
 
 		freqT := [26]int{}
 		for _, l := range s {
-			freqT[int(l)-97]++
+			freqT[l-'a']++
 		}
 
 		hashS := ""
@@ -50,11 +52,7 @@ func GroupAnagrams2(strs []string) [][]string {
 		}
 		hashS = hashS[:len(hashS)-1]
 
-		if _, ok := groups[hashS]; ok {
-			groups[hashS] = append(groups[hashS], s)
-		} else {
-			groups[hashS] = []string{s}
-		}
+		groups[hashS] = append(groups[hashS], s)
 	}
 
 	// convert from hash map to 2d array

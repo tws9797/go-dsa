@@ -1,5 +1,7 @@
 package essentials
 
+// https://leetcode.com/problems/longest-repeating-character-replacement/
+
 func CharacterReplacement(s string, k int) int {
 
 	start := 0

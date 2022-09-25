@@ -2,6 +2,8 @@ package essentials
 
 import "reflect"
 
+// https://leetcode.com/problems/find-all-anagrams-in-a-string/
+
 func FindAnagrams(s string, p string) []int {
 
 	m := map[byte]int{}
@@ -39,6 +41,7 @@ func FindAnagrams(s string, p string) []int {
 }
 
 func FindAnagrams2(s string, p string) []int {
+
 	ns := len(s)
 	np := len(p)
 
@@ -63,13 +66,6 @@ func FindAnagrams2(s string, p string) []int {
 		sCount[s[i]]++
 
 		// remove one letter from the left side of the window
-		//cbaabcbacd
-		//abc
-		/*
-			b:1
-			a:2
-		*/
-
 		if i >= np {
 			if sCount[s[i-np]] == 1 {
 				delete(sCount, s[i-np])
@@ -89,6 +85,7 @@ func FindAnagrams2(s string, p string) []int {
 }
 
 func FindAnagrams3(s string, p string) []int {
+
 	ns := len(s)
 	np := len(p)
 
