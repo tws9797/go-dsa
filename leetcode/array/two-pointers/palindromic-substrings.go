@@ -70,7 +70,7 @@ func CountSubstringsDP(s string) int {
 	return ans
 }
 
-func CountSubstringDP(s string) int {
+func CountSubstringsDP2(s string) int {
 
 	dp := make([][]bool, len(s))
 	for i := range dp {

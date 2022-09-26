@@ -22,6 +22,8 @@ func ThreeSum(nums []int) [][]int {
 			continue
 		}
 
+		//-1, -1, 0, 0, 1, 1
+
 		// Set low pointer to i+1, and high pointer r to the last index
 		l, r := i+1, len(nums)-1
 
@@ -56,7 +58,6 @@ func ThreeSum(nums []int) [][]int {
 				r--
 			}
 		}
-
 	}
 
 	return ans
