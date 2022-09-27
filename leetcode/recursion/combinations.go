@@ -10,6 +10,8 @@ func Combine(n int, k int) [][]int {
 	return ans
 }
 
+// 3, 4
+
 func backtrackCombinations(start, k, n int, prev []int, result *[][]int) {
 	if len(prev) == k {
 		*result = append(*result, append([]int{}, prev...))
