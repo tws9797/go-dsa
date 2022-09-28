@@ -1,4 +1,6 @@
-package leetcode
+package essentials
+
+// https://leetcode.com/problems/rotate-array/
 
 func Rotate(nums []int, k int) {
 
@@ -8,10 +10,20 @@ func Rotate(nums []int, k int) {
 
 		res := make([]int, lenNums)
 
+		// [1,2,3,4,5]
+		// [0,0,0,0,0]
+		// [0,0,1,0,0]
+		// [0,0,1,2,0]
+		// [0,0,1,2,3]
+		// [4,0,1,2,3]
+		// [4,5,1,2,3]
+
+		// Put the number in the right position
 		for i := 0; i < lenNums; i++ {
 			res[(i+k)%lenNums] = nums[i]
 		}
 
+		// Copy res to nums
 		for i := 0; i < lenNums; i++ {
 			nums[i] = res[i]
 		}
@@ -50,10 +62,11 @@ func Rotate2(nums []int, k int) {
 
 }
 
-func rotateIterative(nums []int, k int) {
+func RotateIterative(nums []int, k int) {
 
 	k %= len(nums)
 
+	// Move the array to right for k number of times
 	for i := 0; i < k; i++ {
 
 		prev := nums[len(nums)-1]
