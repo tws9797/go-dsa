@@ -27,3 +27,31 @@ func RomanToInt(s string) int {
 
 	return sum
 }
+
+func RomanToInt2(s string) int {
+
+	m := map[byte]int{
+		'I': 1,
+		'V': 5,
+		'X': 10,
+		'L': 50,
+		'C': 100,
+		'D': 500,
+		'M': 1000,
+	}
+
+	lastValue := m[s[len(s)-1]]
+	sum := lastValue
+
+	for i := len(s) - 2; i >= 0; i-- {
+		currentValue := m[s[i]]
+		if currentValue < lastValue {
+			sum -= currentValue
+		} else {
+			sum += currentValue
+		}
+		lastValue = currentValue
+	}
+
+	return sum
+}
