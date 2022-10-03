@@ -5,25 +5,32 @@ import "sort"
 // https://leetcode.com/problems/meeting-rooms-ii/
 
 func minMeetingRooms(intervals [][]int) int {
-	/*
-		Input: intervals = [[0,30],[5,16],[15,20][30,40],[35,36]]
-		Output: 2
-	*/
-	if len(intervals) == 0 {
-		return 0
+
+	lenIntervals := len(intervals)
+
+	starts := make([]int, lenIntervals)
+	ends := make([]int, lenIntervals)
+
+	for i := 0; i < lenIntervals; i++ {
+		starts[i] = intervals[i][0]
+		ends[i] = intervals[i][1]
 	}
 
-	sort.Slice(intervals, func(i, j int) bool {
-		return intervals[i][0] < intervals[j][0]
-	})
+	sort.Ints(starts)
+	sort.Ints(ends)
 
+	startPtr := 0
+	endPtr := 0
 	count := 0
 
-	for i := 0; i < len(intervals); i++ {
-
-		if intervals[i][1] > intervals[i+1][0] {
+	for startPtr < lenIntervals {
+		if starts[startPtr] < ends[endPtr] {
 			count++
+		} else {
+			endPtr++
 		}
+
+		startPtr++
 	}
 
 	return count

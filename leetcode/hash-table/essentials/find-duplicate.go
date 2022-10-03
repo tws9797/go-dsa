@@ -1,4 +1,4 @@
-package hash_tables
+package essentials
 
 func FindDuplicate(nums []int) int {
 
