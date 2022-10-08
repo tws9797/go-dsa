@@ -1,6 +1,8 @@
 package leetcode
 
-func LowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
+import "go-dsa/leetcode/trie"
+
+func LowestCommonAncestor(root, p, q *trie.TreeNode) *trie.TreeNode {
 
 	currentNode := root
 
@@ -18,7 +20,7 @@ func LowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 	return nil
 }
 
-func LowestCommonAncestorRecursive(root, p, q *TreeNode) *TreeNode {
+func LowestCommonAncestorRecursive(root, p, q *trie.TreeNode) *trie.TreeNode {
 
 	currentNode := root
 

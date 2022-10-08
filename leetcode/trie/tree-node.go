@@ -1,4 +1,4 @@
-package leetcode
+package trie
 
 type TreeNode struct {
 	Val   int

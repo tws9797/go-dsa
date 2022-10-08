@@ -22,7 +22,8 @@ func FibonacciRecursive(num int) int {
 }
 
 func FibonacciMemoizeMaster(num int) int {
-	cache := make(map[int]int)
+
+	cache := map[int]int{}
 	bucket := make([]int, num)
 
 	if num == 0 {
