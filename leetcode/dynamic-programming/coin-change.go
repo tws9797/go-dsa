@@ -38,15 +38,15 @@ func coinChangeRecursive(coins []int, remain int) int {
 	return min
 }
 
-func coinChangeTopdown(coins []int, remain int, count *[]int) int {
+func coinChangeTopdown(coins []int, remain int, count []int) int {
 	if remain < 0 {
 		return -1
 	}
 	if remain == 0 {
 		return 0
 	}
-	if (*count)[remain] != 0 {
-		return (*count)[remain]
+	if count[remain] != 0 {
+		return count[remain]
 	}
 
 	min := math.MaxInt
@@ -62,11 +62,11 @@ func coinChangeTopdown(coins []int, remain int, count *[]int) int {
 	}
 
 	if min == math.MaxInt {
-		(*count)[remain] = -1
+		count[remain] = -1
 	} else {
-		(*count)[remain] = min
+		count[remain] = min
 	}
-	return (*count)[remain]
+	return count[remain]
 }
 
 func coinChangeBottomUp(coins []int, amount int) int {
