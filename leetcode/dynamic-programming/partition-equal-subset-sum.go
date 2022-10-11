@@ -74,11 +74,35 @@ func CanPartitionBottomUp(nums []int) bool {
 				dp[i][j] = dp[i-1][j]
 			} else {
 
-				// To pick nums[i] or not to pick 
+				// To pick nums[i] or not to pick
 				dp[i][j] = dp[i-1][j] || dp[i-1][j-curr]
 			}
 		}
 	}
 
 	return dp[len(nums)][subsetSum]
+}
+
+func CanPartitionBottomUp1D(nums []int) bool {
+	sum := 0
+	for i := 0; i < len(nums); i++ {
+		sum += nums[i]
+	}
+
+	if sum%2 != 0 {
+		return false
+	}
+
+	subsetSum := sum / 2
+
+	dp := make([]bool, subsetSum+1)
+	dp[0] = true
+
+	for _, curr := range nums {
+		for j := subsetSum; j >= curr; j-- {
+			dp[j] = dp[j] || dp[j-curr]
+		}
+	}
+
+	return dp[subsetSum]
 }
