@@ -43,7 +43,7 @@ func SubarraySum(nums []int, k int) int {
 	tmp[0] = 1
 	sum := 0
 	res := 0
-
+	// cumulative sum[i] - sum[j] = k if the sum between element i and j is k
 	for _, v := range nums {
 		sum += v
 		if tmp[sum-k] > 0 {
