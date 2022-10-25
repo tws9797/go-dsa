@@ -17,7 +17,7 @@ func MergeIntervals(intervals [][]int) [][]int {
 	})
 
 	// Add the first array to the mergeIntervals
-	mergeIntervals = append(mergeIntervals, []int{intervals[0][0], intervals[0][1]})
+	mergeIntervals = append(mergeIntervals, intervals[0])
 	//[[1,3],[2,6],[8,10],[15,18]]
 	for i < lenIntervals-1 {
 		end = mergeIntervals[len(mergeIntervals)-1][1]

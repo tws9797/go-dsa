@@ -31,5 +31,4 @@ func LengthOfLongestSubstringKDistinct(s string, k int) int {
 	}
 
 	return longest
-
 }

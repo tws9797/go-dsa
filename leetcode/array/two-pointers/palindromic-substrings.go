@@ -56,16 +56,27 @@ func CountSubstringsDP(s string) int {
 		}
 	}
 
-	for lenS := 3; lenS <= n; lenS++ {
-		j := lenS - 1
-		for i := 0; j < n; i++ {
-			dp[i][j] = dp[i+1][j-1] && s[i] == s[j]
-			if dp[i][j] {
+	// My answer
+	for i := 2; i < n; i++ {
+		for j := i - 2; j >= 0; j-- {
+			dp[j][i] = dp[j+1][i-1] && s[j] == s[i]
+			if dp[j][i] {
 				ans++
 			}
-			j++
 		}
 	}
+
+	// Leetcode answer - too unintuitive
+	//for lenS := 3; lenS <= n; lenS++ {
+	//	j := lenS - 1
+	//	for i := 0; j < n; i++ {
+	//		dp[i][j] = dp[i+1][j-1] && s[i] == s[j]
+	//		if dp[i][j] {
+	//			ans++
+	//		}
+	//		j++
+	//	}
+	//}
 
 	return ans
 }
