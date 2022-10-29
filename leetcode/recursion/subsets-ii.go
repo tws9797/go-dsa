@@ -15,7 +15,7 @@ func SubsetsWithDup(nums []int) [][]int {
 func backtrackSubsetsWithDup(start, n int, nums, prev []int, ans *[][]int) {
 
 	for i := start; i < n; i++ {
-		if i > 0 && i > start && nums[i] == nums[i-1] {
+		if i != start && nums[i] == nums[i-1] {
 			continue
 		}
 		prev = append(prev, nums[i])

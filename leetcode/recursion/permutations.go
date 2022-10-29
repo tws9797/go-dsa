@@ -10,12 +10,11 @@ func Permute(nums []int) [][]int {
 
 func backtrackPermute(start int, nums []int, ans *[][]int) {
 
-	n := len(nums)
-	if start == n {
+	if start == len(nums)-1 {
 		*ans = append(*ans, append([]int{}, nums...))
 	}
 
-	for i := start; i < n; i++ {
+	for i := start; i < len(nums); i++ {
 		nums[start], nums[i] = nums[i], nums[start]
 		backtrackPermute(start+1, nums, ans)
 		nums[start], nums[i] = nums[i], nums[start]

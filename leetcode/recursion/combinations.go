@@ -1,7 +1,5 @@
 package recursion
 
-import "fmt"
-
 // https://leetcode.com/problems/combinations/
 
 func Combine(n int, k int) [][]int {
@@ -24,7 +22,6 @@ func backtrackCombinations(start, k, n int, prev []int, result *[][]int) {
 
 	for i := start; i <= n; i++ {
 		prev = append(prev, i)
-		fmt.Println(prev)
 		backtrackCombinations(i+1, k, n, prev, result)
 		prev = prev[:len(prev)-1]
 	}
