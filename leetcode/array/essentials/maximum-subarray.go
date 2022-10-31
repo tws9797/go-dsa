@@ -17,6 +17,10 @@ func maxSubArray(nums []int) int {
 			maxSum = sum
 		}
 
+		// Any subarray whose sum is positive is worth keeping
+		// Have possibility of become greater value
+		// Whenever the sum of the array is negative,
+		// The entire array is not worth keeping, reset it back to an empty array.
 		if sum < 0 {
 			sum = 0
 		}

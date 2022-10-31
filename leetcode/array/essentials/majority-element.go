@@ -1,6 +1,10 @@
 package essentials
 
 // https://leetcode.com/problems/majority-element/
+/*
+	Input: nums = [2,2,1,1,1,2,2]
+	Output: 2
+*/
 
 func MajorityElement(nums []int) int {
 
@@ -19,8 +23,14 @@ func MajorityElement(nums []int) int {
 	return major
 }
 
+// Boyer-Moore Voting Algorithm
+// Only works when one element is more than n/2
+
 func MajorityElementSuffix(nums []int) int {
 
+	// Maintain a count
+	// Incremented whenever an instance of current candidate for majority element
+	// Decremented when other element appear
 	count := 0
 	var candidate int
 

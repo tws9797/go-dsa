@@ -15,7 +15,7 @@ func Arrays() {
 	var b = a[0]
 	fmt.Println(b)
 
-	// Will initialize array of 5 with {5,5,5,5,5}
+	// Will initialize array of 5 with {0,0,0,0,0}
 	var c [5]int
 	fmt.Println(c)
 
@@ -25,6 +25,7 @@ func Arrays() {
 
 	d[0] = 1
 	fmt.Println(d)
+	fmt.Println(a)
 
 	for i := 0; i < len(a); i++ {
 		fmt.Println(a[i])

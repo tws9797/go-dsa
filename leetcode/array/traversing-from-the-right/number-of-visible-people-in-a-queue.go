@@ -4,28 +4,25 @@ package traversing_from_the_right
 
 func CanSeePersonsCount(heights []int) []int {
 
-	lenHeights := len(heights)
 	ans := make([]int, len(heights))
 
 	// Keep a stack of decreasing values of heights
 	var stack []int
 
 	// Start from the end of the array (traversing from right)
-	for curr := lenHeights - 1; curr >= 0; curr-- {
+	for curr := len(heights) - 1; curr >= 0; curr-- {
 
 		currHeight := heights[curr]
 		count := 0
-		lenStack := len(stack)
 
 		// If currHeight larger than top of the stack,
 		// remove the top of the stack and replace it with currHeight
-		for lenStack > 0 && currHeight > stack[lenStack-1] {
-			stack = stack[:lenStack-1]
-			lenStack--
+		for len(stack) > 0 && currHeight > stack[len(stack)-1] {
+			stack = stack[:len(stack)-1]
 			count++
 		}
 
-		if lenStack > 0 {
+		if len(stack) > 0 {
 			count++
 		}
 
@@ -33,5 +30,5 @@ func CanSeePersonsCount(heights []int) []int {
 		stack = append(stack, currHeight)
 	}
 
-	return stack
+	return ans
 }

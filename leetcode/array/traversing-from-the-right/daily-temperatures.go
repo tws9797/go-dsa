@@ -71,6 +71,8 @@ func DailyTemperaturesArray(temperatures []int) []int {
 
 		//73,74,75,71,69,72,76,73
 		days := 1
+
+		// For next temperature is greater or equal
 		for currTemp >= temperatures[currDay+days] {
 			days += ans[currDay+days]
 		}

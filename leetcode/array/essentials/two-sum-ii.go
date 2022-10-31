@@ -4,23 +4,24 @@ package essentials
 
 func TwoSumInputArrayIsSorted(numbers []int, target int) []int {
 
-	start, end := 0, len(numbers)-1
+	l, r := 0, len(numbers)-1
+	sum := 0
 
-	for start < end {
+	for l < r {
 
-		complement := target - numbers[start]
+		sum = numbers[l] + numbers[r]
 
-		for complement <= numbers[end] {
-
-			if complement == numbers[end] {
-
-				return []int{start + 1, end + 1}
-			}
-
-			end--
+		if sum == target {
+			return []int{l + 1, r + 1}
 		}
 
-		start++
+		if sum < target {
+			sum -= numbers[l]
+			l++
+		} else {
+			sum -= numbers[r]
+			r--
+		}
 	}
 
 	return nil

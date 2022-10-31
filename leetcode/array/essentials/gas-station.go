@@ -1,22 +1,21 @@
 package essentials
 
 // https://leetcode.com/problems/gas-station/
+/*
+	Input: gas = [1,2,3,4,5],
+	cost = [3,4,5,1,2]
+	Explanation:
+	Start at station 3 (index 3) and fill up with 4 unit of gas. Your tank = 0 + 4 = 4
+	Travel to station 4. Your tank = 4 - 1 + 5 = 8
+	Travel to station 0. Your tank = 8 - 2 + 1 = 7
+	Travel to station 1. Your tank = 7 - 3 + 2 = 6
+	Travel to station 2. Your tank = 6 - 4 + 3 = 5
+	Travel to station 3. The cost is 5. Your gas is just enough to travel back to station 3.
+	Therefore, return 3 as the starting index.
+		Output: 3
+*/
 
 func CanCompleteCircuit(gas []int, cost []int) int {
-
-	/*
-		Input: gas = [1,2,3,4,5],
-		cost = [3,4,5,1,2]
-		Explanation:
-		Start at station 3 (index 3) and fill up with 4 unit of gas. Your tank = 0 + 4 = 4
-		Travel to station 4. Your tank = 4 - 1 + 5 = 8
-		Travel to station 0. Your tank = 8 - 2 + 1 = 7
-		Travel to station 1. Your tank = 7 - 3 + 2 = 6
-		Travel to station 2. Your tank = 6 - 4 + 3 = 5
-		Travel to station 3. The cost is 5. Your gas is just enough to travel back to station 3.
-		Therefore, return 3 as the starting index.
-			Output: 3
-	*/
 
 	/*
 		Scenario 1:
@@ -28,8 +27,8 @@ func CanCompleteCircuit(gas []int, cost []int) int {
 		Hence set the starting station to i+1 as well
 
 		Scenario 3:
-		If currTank is more than 0 until the end of the lenStation, check the totalTank.
-		The totalTank must be greater than 0 to have at least one starting point
+		If currTank is equal or more than 0 until the end of the lenStation, check the totalTank.
+		The totalTank must be equal or greater than 0 to have at least one starting point
 	*/
 
 	totalTank := 0
@@ -53,7 +52,7 @@ func CanCompleteCircuit(gas []int, cost []int) int {
 			currTank = 0
 
 			// Pick up the next station as the starting one.
-			// One thing to note is that the answer must be unique
+			// One thing to note is that If there exists a solution, it is guaranteed to be unique
 			startingStation = i + 1
 		}
 	}

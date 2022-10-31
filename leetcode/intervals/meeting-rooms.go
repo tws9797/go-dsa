@@ -2,6 +2,8 @@ package intervals
 
 import "sort"
 
+// https://leetcode.com/problems/meeting-rooms/
+
 func CanAttendMeetings(intervals [][]int) bool {
 
 	sort.Slice(intervals, func(i, j int) bool {

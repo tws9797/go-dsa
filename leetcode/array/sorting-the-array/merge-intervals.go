@@ -3,13 +3,15 @@ package sorting_the_array
 import "sort"
 
 // https://leetcode.com/problems/merge-intervals/
+/*
+	Input: intervals = [[1,3],[2,6],[8,10],[15,18]]
+	Output: [[1,6],[8,10],[15,18]]
+	Explanation: Since intervals [1,3] and [2,6] overlap, merge them into [1,6].
+*/
 
 func MergeIntervals(intervals [][]int) [][]int {
 
 	var mergeIntervals [][]int
-	end := 0
-	lenIntervals := len(intervals)
-	i := 0
 
 	// Sort the starting value of each array
 	sort.Slice(intervals, func(i, j int) bool {
@@ -18,21 +20,17 @@ func MergeIntervals(intervals [][]int) [][]int {
 
 	// Add the first array to the mergeIntervals
 	mergeIntervals = append(mergeIntervals, intervals[0])
-	//[[1,3],[2,6],[8,10],[15,18]]
-	for i < lenIntervals-1 {
-		end = mergeIntervals[len(mergeIntervals)-1][1]
+	for i := 1; i < len(intervals); i++ {
 
-		if end < intervals[i+1][0] {
-			mergeIntervals = append(mergeIntervals, []int{intervals[i+1][0], intervals[i+1][1]})
-		} else {
-			if end < intervals[i+1][1] {
-				end = intervals[i+1][1]
+		lenMergeIntervals := len(mergeIntervals)
+
+		if intervals[i][0] <= mergeIntervals[lenMergeIntervals-1][1] {
+			if intervals[i][1] > mergeIntervals[lenMergeIntervals-1][1] {
+				mergeIntervals[lenMergeIntervals-1][1] = intervals[i][1]
 			}
-
-			mergeIntervals[len(mergeIntervals)-1][1] = end
+		} else {
+			mergeIntervals = append(mergeIntervals, intervals[i])
 		}
-
-		i++
 	}
 
 	return mergeIntervals

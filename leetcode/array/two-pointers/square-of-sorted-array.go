@@ -7,6 +7,7 @@ func SortedSquares(nums []int) []int {
 	l, r := 0, len(nums)-1
 	ans := make([]int, len(nums))
 
+	// The most negative number after squared will be a lot bigger
 	for i := len(nums) - 1; i >= 0; i-- {
 
 		if nums[l]*nums[l] >= nums[r]*nums[r] {

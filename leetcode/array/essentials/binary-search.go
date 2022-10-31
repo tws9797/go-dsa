@@ -8,7 +8,9 @@ func Search(nums []int, target int) int {
 
 	for l <= r {
 
-		mid := (l + r) / 2
+		// https://stackoverflow.com/questions/27167943/why-leftright-left-2-will-not-overflow
+		// Prevent r too big and causes overflow
+		mid := r + (l-r)/2
 
 		if target == nums[mid] {
 			return mid

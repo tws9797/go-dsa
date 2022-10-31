@@ -24,6 +24,7 @@ func robFrom(memo []int, i int, nums []int) int {
 		return memo[i]
 	}
 
+	// Either rob from the next room, or current room + max(robFrom(i+2))
 	ans := max(robFrom(memo, i+1, nums), robFrom(memo, i+2, nums)+nums[i])
 
 	// Cache for future use.
@@ -39,9 +40,11 @@ func RobDP(nums []int) int {
 		return 0
 	}
 
+	// Append a 0 for first i+2 scenario
 	maxRobbedAmount := make([]int, len(nums)+1)
 	maxRobbedAmount[N-1] = nums[N-1]
 
+	// robFrom(i)=max(robFrom(i+1),robFrom(i+2)+nums(i))
 	for i := N - 2; i >= 0; i-- {
 		maxRobbedAmount[i] = max(maxRobbedAmount[i+1], maxRobbedAmount[i+2]+nums[i])
 	}

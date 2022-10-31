@@ -2,7 +2,7 @@ package essentials
 
 import "sort"
 
-//https://leetcode.com/problems/valid-palindrome/
+//https://leetcode.com/problems/contains-duplicate/
 
 func ContainsDuplicate(nums []int) bool {
 

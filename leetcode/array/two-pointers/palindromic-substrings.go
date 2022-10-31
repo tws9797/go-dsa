@@ -18,10 +18,13 @@ func CountSubstrings(s string) int {
 	return count
 }
 
+// Expand around all possible centers
 func extendPalindrome(s string, l, r int) int {
 
 	res := 0
 
+	// Multiple palindromes have the same centers.
+	// If we choose a center, we can continue to expand around it as long as we can make larger and larger palindromes.
 	for l >= 0 && r < len(s) && s[l] == s[r] {
 		l--
 		r++
