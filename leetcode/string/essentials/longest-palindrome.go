@@ -43,6 +43,8 @@ func longestPalindromeGreedy(s string) int {
 	ans := 0
 
 	for _, v := range count {
+
+		// For odd value 
 		ans += v / 2 * 2
 		if ans%2 == 0 && v%2 == 1 {
 			ans++

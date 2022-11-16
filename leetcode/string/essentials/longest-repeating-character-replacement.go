@@ -24,7 +24,7 @@ func CharacterReplacement(s string, k int) int {
 		// Number of replacement needed for all characters in window to be the same
 		replaceCount := end - start + 1 - uniqueCount
 
-		// When end-start+1-uniqueCount == 0, the window is filled with only one character
+		// When end-start+1-uniqueCount == 0, the window is filled with only single character
 		// When end-start+1-uniqueCount > 0, then we have characters in the window that are NOT the character that occurs the most
 		// end-start+1-uniqueCount is equal to exactly the # of characters that are required for all characters in window to be the same
 		// Example: For a window "xxxyz", end-start+1-maxCount would equal 2. (maxCount is 3 and there are 2 characters here, "y" and "z" that are not "x" in the window.)

@@ -24,6 +24,10 @@ func doCombination(candidates []int, target int, prevSum int, prev []int, ans *[
 
 	for i, v := range candidates {
 		prev = append(prev, v)
+
+		// Backtrack by popping out the candidate out of the combination
+		// Once a candidate is added into the current combination
+		// not look back to all the previous candidates in the next explorations
 		doCombination(candidates[i:], target, prevSum+v, prev, ans)
 		prev = prev[:len(prev)-1]
 	}

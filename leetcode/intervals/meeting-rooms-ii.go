@@ -23,6 +23,12 @@ func minMeetingRooms(intervals [][]int) int {
 	endPtr := 0
 	count := 0
 
+	/*
+		When we encounter an ending event,
+		that means that some meeting that started earlier has ended now.
+		We are not really concerned with which meeting has ended.
+		All we need is that some meeting ended thus making a room available.
+	*/
 	for startPtr < lenIntervals {
 		if starts[startPtr] < ends[endPtr] {
 			count++

@@ -30,6 +30,7 @@ func LetterCombinations(digits string) []string {
 
 func backtrackLetterCombinations(start int, prev []byte, strs []byte, m map[byte][]byte, ans *[]string) {
 
+	// if start == len(strs)
 	if len(prev) == len(strs) {
 		*ans = append(*ans, string(prev))
 		return

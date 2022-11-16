@@ -41,6 +41,7 @@ func GenerateParenthesisBacktracking(n int) []string {
 }
 
 func backtrack(ans *[]string, str string, open int, close int, n int) {
+
 	if len(str) == n*2 {
 		*ans = append(*ans, str)
 		return

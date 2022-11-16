@@ -1,10 +1,13 @@
 package math
 
+// https://leetcode.com/problems/sqrtx/
+
 func MySqrt(x int) int {
 	if x < 2 {
 		return x
 	}
 
+	// For x >= 2, the square root is always smaller than or equal to x/2 and larger than 0
 	left, right := 2, x/2
 	pivot := 0
 
